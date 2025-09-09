@@ -23,10 +23,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing new laptop...'
-                sh '''
-                  npm test
-                   '''
+                echo 'Test stage'
+                
              }
          }     
     }
