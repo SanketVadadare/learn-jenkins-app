@@ -101,10 +101,11 @@ pipeline {
         }
         stage('Approval') {
             steps {
-                input message: 'Approve Deployment to Production?', ok: 'Deploy'
+                timeout(time: 15, unit: 'MINUTES') {
+                    input message: 'Approve Deployment to Production?', ok: 'Deploy'
                 }   
             }
-        
+        }
 
          stage('Deploy Prod') {
             agent {
